@@ -14,7 +14,7 @@
 	
 	<div class = "container">
 	
-		<h1>User Directory</h1>
+		<h1>User Login</h1>
 		<hr/>
 		<p>${aviso}</p>
 		<div class = "row">

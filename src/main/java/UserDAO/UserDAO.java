@@ -31,10 +31,10 @@ public interface UserDAO {
 	
 	/**
 	 * It saves an user
-	 * @param employee
-	 * @return true if employee is correctly saved or false if there is an error
+	 * @param user
+	 * @return true if user is correctly saved or false if there is an error
 	 */
-	boolean save(UserEntidad employee);
+	boolean save(UserEntidad user);
 	
 	/**
 	 * 

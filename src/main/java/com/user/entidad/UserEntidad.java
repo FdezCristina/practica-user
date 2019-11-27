@@ -14,13 +14,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name="USERENTIDAD")
 @NamedQuery(name="UserEntidad.findAll", query="SELECT u FROM UserEntidad u")
-//@NamedQuery(name="UserEntidad.login", query="SELECT u FROM UserEntidad u WHERE email=:email AND password=:password")
+@NamedQuery(name="UserEntidad.login", query="SELECT u FROM UserEntidad u WHERE u.email = :email AND u.password = :password")
 public class UserEntidad implements Serializable{
 
 	
 	private static final long serialVersionUID = 1L;
 	@Id
-	//@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id")
 	private Long id;
 	 
@@ -44,7 +44,7 @@ public class UserEntidad implements Serializable{
 		super();
 	}
 
-	public UserEntidad(Long id, String name, String surname, String email, String password, int ege, int age) {
+	public UserEntidad(Long id, String name, String surname, String email, String password, int age) {
 		super();
 		this.id = id;
 		this.name = name;

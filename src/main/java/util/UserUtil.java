@@ -13,7 +13,7 @@ import UserDAO.UserDAOImpl;
 public class UserUtil {
 	
 
-	public static void cargarDatosInicales(HttpServletRequest request) {
+	public static void cargarDatosIniciales(HttpServletRequest request) {
 		
 		UserDAO userDAO = new UserDAOImpl();
 		List<UserEntidad> results = new ArrayList<UserEntidad>();

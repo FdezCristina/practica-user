@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Employee Directory</title>
+<title>User Directory</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 </head>
@@ -13,13 +13,13 @@
 	
 	<div class = "container">
 		
-		<h1>Employee Directory</h1>
+		<h1>User Directory</h1>
 		<hr/>
 		
 		<p>${NOTIFICATION}</p>
 		
 		<p>
-			<button class = "btn btn-primary" onclick="window.location.href = 'views/employee-form.jsp'">Add Employee</button>
+			<button class = "btn btn-primary" onclick="window.location.href = 'views/user-form.jsp'">Add User</button>
 		</p>
 	
 		<table class = "table table-striped table-bordered">
@@ -31,16 +31,16 @@
 				<th>Actions</th>
 			</tr>
 			
-			<c:forEach items="${list}" var="employee">
+			<c:forEach items="${list}" var="user">
 			
 				<tr>
-					<td>${employee.name}</td>
-					<td>${employee.email}</td>
-					<td>${employee.department}</td>
+					<td>${user.name}</td>
+					<td>${user.email}</td>
+					<td>${user.department}</td>
 					<td> 
-						<a href = "${pageContext.request.contextPath}/EmployeeController?action=EDIT&id=${employee.id}">Edit</a> 
+						<a href = "${pageContext.request.contextPath}/UserController?action=EDIT&id=${user.id}">Edit</a> 
 						| 
-						<a href = "${pageContext.request.contextPath}/EmployeeController?action=DELETE&id=${employee.id}">Delete</a> 
+						<a href = "${pageContext.request.contextPath}/UserController?action=DELETE&id=${user.id}">Delete</a> 
 					</td>
 				</tr>
 				

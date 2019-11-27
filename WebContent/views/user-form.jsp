@@ -11,27 +11,32 @@
 	
 	<div class = "container">
 	
-		<h1>Employee Directory</h1>
+		<h1>User Directory</h1>
 		<%@include file="navegacion.jsp" %>
 		<hr/>
 		
 		<div class = "row">
 			<div class = "col-md-4">
-				<form action = "${pageContext.request.contextPath}/EmployeeController" method="POST">
+				<form action = "${pageContext.request.contextPath}/UserController" method="POST">
 				
 					<div class = "form-group">
-						<input type = "text" class = "form-control" name = "name" placeholder = "Enter Name" value = "${employee.name}"/>
+						<input type = "text" class = "form-control" name = "name" placeholder = "Enter Name" value = "${user.name}"/>
 					</div>
 				
 					<div class = "form-group">
-						<input type = "text" class = "form-control" name = "email" placeholder = "Enter Email" value = "${employee.email}"/>
+						<input type = "text" class = "form-control" name = "surname" placeholder = "Enter Surname" value = "${user.surname}"/>
 					</div>
 				
-					<div class="form-group">
-					  	<input type = "text" class = "form-control" name = "department" placeholder = "Enter Department" value = "${employee.department}"/>
+					<div class = "form-group">
+						<input type = "text" class = "form-control" name = "email" placeholder = "Enter Email" value = "${user.email}"/>
 					</div>
 				
-					<input type = "hidden" name = "id" value = "${employee.id}"/>
+				
+					<div class = "form-group">
+						<input type = "text" class = "form-control" name = "age" placeholder = "Enter Age" value = "${user.age}"/>
+					</div>
+				
+				
 				
 					<button type = "submit" class = "btn btn-primary">Save</button>
 				</form>

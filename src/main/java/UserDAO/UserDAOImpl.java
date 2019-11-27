@@ -102,6 +102,8 @@ EntityManager manager;
 		try {
 			manager = JPAUtil.getEntityManager();
 			TypedQuery<UserEntidad> namedQuery = manager.createNamedQuery("UserEntidad.login", UserEntidad.class);
+			namedQuery.setParameter("email", email);
+			namedQuery.setParameter("password", password);
 			List<UserEntidad> results = namedQuery.getResultList();
 			manager.close();
 			return results;

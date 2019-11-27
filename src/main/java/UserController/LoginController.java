@@ -14,7 +14,6 @@ import com.user.entidad.UserEntidad;
 
 import UserDAO.UserDAO;
 import UserDAO.UserDAOImpl;
-import UserDAO.UserDAOImplMock;
 import util.UserUtil;
 
 @WebServlet("/LoginController")
@@ -53,7 +52,14 @@ public class LoginController extends HttpServlet {
 		}
 
 	}
-
+/**
+ * Método Login
+ * @param request
+ * @param response
+ * @throws ServletException
+ * @throws IOException
+ */
+	
 	private void getLogin(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -78,14 +84,15 @@ public class LoginController extends HttpServlet {
 			request.setAttribute("user", user);
 			request.getSession().setAttribute("user", user);
 			
-			//Falta buscar datos iniciales
-			UserUtil.cargarDatosInicales(request);
+		//Falta buscar datos iniciales
+			UserUtil.cargarDatosIniciales(request);
 			dispatcher = request.getRequestDispatcher("/views/user-form.jsp");
 		} else {
 
 			if (email != null || password != null) {
-				// Mostrar aviso de login invalido (navengando a la misma de login pero con
-				// pametro de mostrar aviso)
+				
+		// Mostrar aviso de login invalido (navegando a la misma de login pero con
+		// pametro de mostrar aviso)
 				request.setAttribute("aviso", "Datos no validos");
 			}
 
@@ -94,7 +101,13 @@ public class LoginController extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 	
-	
+/**
+ * Método Logout
+ * @param request
+ * @param response
+ * @throws ServletException
+ * @throws IOException
+ */
 	 
 	private void cerrarSesion(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

@@ -88,7 +88,7 @@ public class UserController extends HttpServlet {
 
 		request.setAttribute("user", user);
 
-		dispatcher = request.getRequestDispatcher("/views/employee-form.jsp");
+		dispatcher = request.getRequestDispatcher("/views/user-form.jsp");
 
 		dispatcher.forward(request, response);
 	}
@@ -127,7 +127,7 @@ public class UserController extends HttpServlet {
 
 		request.setAttribute("list", theList);
 
-		dispatcher = request.getRequestDispatcher("/views/employee-list.jsp");
+		dispatcher = request.getRequestDispatcher("/views/user-list.jsp");
 
 		dispatcher.forward(request, response);
 	}
