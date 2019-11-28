@@ -113,8 +113,9 @@ public class UserController extends HttpServlet {
 		dispatcher = request.getRequestDispatcher("/views/user-form.jsp");
 		}else {
 			request.setAttribute("aviso", "Datos no validos");
-			//Mostrar aviso de login invalido (navengando a la misma de login pero con pametro de mostrar aviso)
-			dispatcher = request.getRequestDispatcher("/views/Login.jsp");
+			
+		//Mostrar aviso de login invalido (navegando a la misma de login pero con mostrar aviso)
+		dispatcher = request.getRequestDispatcher("/views/Login.jsp");
 		}
 		dispatcher.forward(request, response);
 	}
@@ -142,17 +143,17 @@ public class UserController extends HttpServlet {
 		
 		user.setEmail(request.getParameter("email"));
 
-		if (id.isEmpty() || id == null) {
+		if (id == null || id.isEmpty()  ) {
 
 			if (userDAO.save(user)) {
-				request.setAttribute("NOTIFICATION", "Employee Saved Successfully!");
+				request.setAttribute("NOTIFICATION", "User Saved Successfully!");
 			}
 
 		} else {
 
 			user.setId(Long.parseLong(id));
 			if (userDAO.update(user)) {
-				request.setAttribute("NOTIFICATION", "Employee Updated Successfully!");
+				request.setAttribute("NOTIFICATION", "User Updated Successfully!");
 			}
 
 		}

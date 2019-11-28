@@ -36,7 +36,7 @@
 				<tr>
 					<td>${user.name}</td>
 					<td>${user.email}</td>
-					<td>${user.department}</td>
+					
 					<td> 
 						<a href = "${pageContext.request.contextPath}/UserController?action=EDIT&id=${user.id}">Edit</a> 
 						| 
