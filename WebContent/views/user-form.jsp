@@ -28,15 +28,18 @@
 					</div>
 				
 					<div class = "form-group">
-						<input type = "text" class = "form-control" name = "email" placeholder = "Enter Email" value = "${user.email}"/>
+						<input type = "email" class = "form-control" name = "email" placeholder = "Enter Email" value = "${user.email}"/>
 					</div>
 				
 				
 					<div class = "form-group">
-						<input type = "text" class = "form-control" name = "age" placeholder = "Enter Age" value = "${user.age}"/>
+						<input type = "number" class = "form-control" name = "age" placeholder = "Enter Age" value = "${user.age}"/>
 					</div>
 				
-				
+					
+					<div class = "form-group">
+						<input type = "password" class = "form-control" name = "password" placeholder = "Enter password" value = "${user.password}"/>
+					</div>
 				
 					<button type = "submit" class = "btn btn-primary">Save</button>
 				</form>

@@ -141,8 +141,14 @@ public class UserController extends HttpServlet {
 		UserEntidad user = new UserEntidad();
 		user.setName(request.getParameter("name"));
 		
+		user.setSurname(request.getParameter("surname"));
+		
 		user.setEmail(request.getParameter("email"));
-
+		
+		user.setPassword(request.getParameter("password"));
+		
+		user.setAge(Integer.parseInt(request.getParameter("age")));
+		
 		if (id == null || id.isEmpty()  ) {
 
 			if (userDAO.save(user)) {
